@@ -3,8 +3,7 @@
 
 import Head from "next/head";
 import React, { Suspense } from "react";
-import { Canvas } from "react-three-fiber";
-import GlbViewer from "../../../components/ThreeScene";
+import GlbViewer from "../../../components/R35_GTR_Model";
 const Home: React.FC = () => {
   return (
     <div>
