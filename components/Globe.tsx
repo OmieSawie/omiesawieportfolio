@@ -6,7 +6,9 @@ const Sphere: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Scene setup
     const scene = new THREE.Scene();
+
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
@@ -21,7 +23,21 @@ const Sphere: React.FC = () => {
     }
 
     // Sphere geometry
-    const geometry = new THREE.SphereGeometry(1, 32, 32);
+    const geometry = new THREE.SphereGeometry(2, 32, 32);
+
+    // Load cube texture
+    const cubeTextureLoader = new THREE.CubeTextureLoader();
+    const environmentMap = cubeTextureLoader.load([
+      "/skybox/right.jpg", // right
+      "/skybox/left.jpg", // left
+      "/skybox/top.jpg", // top
+      "/skybox/bottom.jpg", // bottom
+      "/skybox/front.jpg", // front
+      "/skybox/back.jpg", // back
+    ]);
+
+    // Apply the environment map to the scene background and the sphere's material
+    scene.background = environmentMap;
 
     // Texture loader
     const textureLoader = new THREE.TextureLoader();
@@ -31,24 +47,33 @@ const Sphere: React.FC = () => {
       onProgress,
       // onError,
     );
-    // const roughnessTexture = textureLoader.load(
-    //   "../public/textures/stone_wall_04_rough_4k.exr",
-    //   onLoad,
-    //   onProgress,
-    //   onError,
-    // );
+    const roughnessTexture = textureLoader.load(
+      "/textures/stone_wall_04_rough_4k.jpg",
+      onLoad,
+      onProgress,
+      // onError,
+    );
 
     // Material setup
     const material = new THREE.MeshStandardMaterial({
       map: diffuseTexture,
-      // roughnessMap: roughnessTexture,
+      roughnessMap: roughnessTexture,
       roughness: 1,
       metalness: 0.5,
+      envMap: environmentMap, // Use environment map for reflections
     });
 
     // Sphere mesh
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
+
+    // Lighting setup
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // White directional light
+    directionalLight.position.set(5, 5, 5);
+    scene.add(directionalLight);
 
     // Camera setup
     camera.position.z = 5;
