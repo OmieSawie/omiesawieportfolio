@@ -22,9 +22,6 @@ const Sphere: React.FC = () => {
       mountRef.current.appendChild(renderer.domElement);
     }
 
-    // Sphere geometry
-    const geometry = new THREE.SphereGeometry(2, 32, 32);
-
     // Load cube texture
     const cubeTextureLoader = new THREE.CubeTextureLoader();
     const environmentMap = cubeTextureLoader.load([
@@ -63,6 +60,8 @@ const Sphere: React.FC = () => {
       envMap: environmentMap, // Use environment map for reflections
     });
 
+    // Sphere geometry
+    const geometry = new THREE.SphereGeometry(2, 32, 32);
     // Sphere mesh
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
@@ -82,7 +81,10 @@ const Sphere: React.FC = () => {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.25;
-    controls.rotateSpeed = 0.35;
+    controls.rotateSpeed = 0.5;
+    controls.maxDistance = 5;
+    controls.minDistance = 3;
+    controls.enablePan = false;
 
     // Animation loop
     const animate = () => {
