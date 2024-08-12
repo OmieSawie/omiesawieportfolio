@@ -28,7 +28,14 @@ export const links = [
   },
 ] as const;
 
-export const experiencesData = [
+interface ExperienceItem {
+  title: string;
+  location: string;
+  description: string;
+  icon: React.ReactNode; // Adjust if you're using a specific icon type
+  date: string;
+}
+export const experiencesData: ExperienceItem[] = [
   {
     title: "Summer Robotics Intern, eYantra, IIT Bombay",
     location: "IIT Bombay, Mumbai, India",
@@ -45,7 +52,7 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "May - July 2024",
   },
-] as const;
+];
 
 export const projectsData = [
   {
