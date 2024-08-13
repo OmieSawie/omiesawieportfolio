@@ -56,24 +56,38 @@ export const experiencesData: ExperienceItem[] = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Booking Management Website",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "Developed a booking management website for the Community Center of IIT BBS.",
+    tags: ["React", "ExpressJs", "MongoDB"],
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "Discord Bot",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "Made a Discord Bot for my personal server to experiment with the DiscordJS Api",
+    tags: ["ExpressJs", "DiscordJS"],
     imageUrl: rmtdevImg,
   },
   {
-    title: "Word Analytics",
+    title: "Whatsapp Clone",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+      "A Whatsapp Clone with all major functionalities like chatrooms, groups, sending messages, images, videos and documents and unread notification.",
+    tags: ["React", "ExpressJs", "MongoDB", "Tailwind", "Redux"],
+    imageUrl: wordanalyticsImg,
+  },
+  {
+    title: "Blog cum Discussion Forum",
+    description:
+      "A forum space made using NextJs for posting blogs and comments.",
+    tags: ["React", "Apollo GraphQL", "MongoDB", "Prisma", "PubSub"],
+    imageUrl: wordanalyticsImg,
+  },
+  {
+    title: "SLAM and Photogrammetry",
+    description:
+      "A SLAM and Photogrammetry Program written from scratch using the OpenCV C++ Library along with OpenCV-Cuda.",
+    tags: ["C++", "OpenCV", "Cuda", "CMake", "Point Clouds"],
     imageUrl: wordanalyticsImg,
   },
 ] as const;
@@ -84,18 +98,29 @@ export const skillsData = [
   "JavaScript",
   "TypeScript",
   "React",
+  "ExpressJs",
   "Next.js",
+  "GraphQL",
+  "Apollo",
   "Node.js",
   "Git",
   "Tailwind",
+  "Material UI",
+  "ANTDesign",
   "Prisma",
   "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
+  "MySQL",
+  "MariaDB",
   "PostgreSQL",
+  "Computer Vision",
+  "OpenCV C++",
+  "CMake",
+  "Nvidia Cuda",
   "Python",
-  "Django",
-  "Framer Motion",
+  "Robotics",
+  "Microcontroller Programming",
+  "Raspberry Pi",
+  "Linux",
+  "Arch Linux",
 ] as const;

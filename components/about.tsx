@@ -31,7 +31,7 @@ export default function About() {
         satisfaction that comes from solving complex challenges. My primary
         technical stack includes{" "}
         <span className="font-medium">
-          Node.js, React, ExpressJS, Next.js, and MongoDB
+          Node.js, React, ExpressJS, Next.js and GraphQL
         </span>
         , with solid expertise in both NoSQL databases like MongoDB and SQL
         databases such as MySQL and PostgreSQL. I am also proficient in
