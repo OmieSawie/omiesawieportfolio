@@ -1,8 +1,11 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
+import ccbsImg from "@/public/ccbs.png";
+import discordBotImg from "@/public/discordBot.jpg";
+import photogrammetryImg from "@/public/photogrammetry.jpg";
+import whatsappCloneImg from "@/public/whatsappClone.jpg";
+import redditCloneImg from "@/public/redditClone.jpg";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
@@ -60,21 +63,27 @@ export const projectsData = [
     description:
       "Developed a booking management website for the Community Center of IIT BBS.",
     tags: ["React", "ExpressJs", "MongoDB"],
-    imageUrl: corpcommentImg,
+    imageUrl: ccbsImg,
+  },
+  {
+    title: "Reddit Clone",
+    description: "A blog cum discussion forum, just like reddit.",
+    tags: ["Apollo GraphQL", "Prisma"],
+    imageUrl: redditCloneImg,
+  },
+  {
+    title: "WhatsApp Clone",
+    description:
+      "A real time chat app with functionality such as file upload, messaging groups and much more!",
+    tags: ["ExpressJs", "Redux", "React", "MongoDB"],
+    imageUrl: whatsappCloneImg,
   },
   {
     title: "Discord Bot",
     description:
       "Made a Discord Bot for my personal server to experiment with the DiscordJS Api",
     tags: ["ExpressJs", "DiscordJS"],
-    imageUrl: rmtdevImg,
-  },
-  {
-    title: "Whatsapp Clone",
-    description:
-      "A Whatsapp Clone with all major functionalities like chatrooms, groups, sending messages, images, videos and documents and unread notification.",
-    tags: ["React", "ExpressJs", "MongoDB", "Tailwind", "Redux"],
-    imageUrl: wordanalyticsImg,
+    imageUrl: discordBotImg,
   },
   {
     title: "Blog cum Discussion Forum",
@@ -88,7 +97,7 @@ export const projectsData = [
     description:
       "A SLAM and Photogrammetry Program written from scratch using the OpenCV C++ Library along with OpenCV-Cuda.",
     tags: ["C++", "OpenCV", "Cuda", "CMake", "Point Clouds"],
-    imageUrl: wordanalyticsImg,
+    imageUrl: photogrammetryImg,
   },
 ] as const;
 
